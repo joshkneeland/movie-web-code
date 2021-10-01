@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAllMovies } from '../redux/actions';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFilm } from '@fortawesome/free-solid-svg-icons'
 
 class Home extends Component {
   componentDidMount() {
-    this.props.getAllMovies()
+    this.props.getAllMovies();
+    console.log('this.props.movies: ', this.props.movies);
+  }
+
+  clickMovie() {
+    console.log('this worked');
   }
 
   render() {
@@ -16,8 +19,7 @@ class Home extends Component {
         <h4>All Movies</h4>
         <div className="movies">
           {this.props.movies.map(movie => (
-            <div key={movie.imdbId} className="movie-wrapper">
-              <FontAwesomeIcon icon={faFilm} className="font-icon"/>
+            <div key={movie.imdbId} onClick={this.clickMovie} style={{backgroundImage: `url("${movie.poster}")` }} className="movie-wrapper">
               <div className="movie-cover">
               </div>
               <h6>{movie.title}</h6>
