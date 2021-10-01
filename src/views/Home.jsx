@@ -21,13 +21,20 @@ function Home(props) {
         <h4>All Movies</h4>
         <div className="movies">
           {
-          props.filteredMovies ? props.filteredMovies.map(movie => (
-              <div key={movie.imdbId} onClick={() => clickMovie(movie)} style={{backgroundImage: `url("${movie.poster}")` }} className="movie-wrapper">
-                <div className="movie-cover">
+            props.filteredMovies ? props.filteredMovies.map(movie => (
+                <div key={movie.imdbId} onClick={() => clickMovie(movie)} style={{backgroundImage: `url("${movie.poster}")` }} className="movie-wrapper">
+                  <div className="movie-cover">
+                  </div>
+                  <h6>{movie.title}</h6>
                 </div>
-                <h6>{movie.title}</h6>
+              )) : null
+          }
+          {
+            props.filteredMovies && props.filteredMovies.length === 0 ? (
+              <div>
+                <h2>Oops, something went wrong!</h2>
               </div>
-            )) : null
+            ) : null
           }
         </div>
       </div>
