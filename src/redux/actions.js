@@ -11,3 +11,14 @@ export const getAllMovies = () => dispatch => {
         })
       })
 }
+
+export const getSelectedMovie = (getSelectedMovie) => dispatch => {
+  // console.log('GET_SELECTED_MOVIE was hit');
+  // console.log('getSelectedMovie: ', getSelectedMovie);
+  dispatch({
+    type: 'GET_SELECTED_MOVIE',
+    payload: {
+      selectedMovie: getSelectedMovie
+    }
+  });
+}
