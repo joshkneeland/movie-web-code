@@ -5,19 +5,20 @@ import { getAllMovies } from '../redux/actions';
 
 class MovieDetails extends Component {
   componentDidMount() {
-    console.log('this.props MOVIE DETAILS: ', this.props);
+    console.log('this.props: ', this.props);
   }
-
-  clickMovie() {
-    console.log('this worked');
-  }
-
   render() {
     return (
       <div className="movie-container">
         <Link to='/' className="back-button">Back To Results</Link>
-        <div className="inner-container">
-          <h2>{this.props.selectedMovie.title}</h2>
+        <div className="inner-container inner-container-movie-description">
+          <div className="selected-movie-info">
+            <img src={this.props.selectedMovie.poster} alt={this.props.selectedMovie.title} />
+          </div>
+          <div className="selected-movie-info">
+            <h2 className="movie-name">{this.props.selectedMovie.title}</h2>
+            <h4 className="movie-release-date">Release Date: {this.props.selectedMovie.releaseDate}</h4>
+          </div>
         </div>
       </div>
     )

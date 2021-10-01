@@ -27,6 +27,8 @@ header {
   border-bottom: 0.25rem solid rgb(124,195,194);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
 }
 
 header a {
@@ -43,6 +45,15 @@ h6 {
   text-align: center;
   overflow-y: scroll;
   max-height: 50px;
+}
+
+input {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 3px;
+  width: 200px;
+  height: 25px;
+  padding-left: 0.5rem;
+  font-size: 0.75rem;
 }
 
 .app {
@@ -76,6 +87,11 @@ h6 {
   padding: 1.5rem;
 }
 
+.inner-container-movie-description {
+  display: flex;
+  padding: 4rem 2rem;
+}
+
 .margin-container {
   margin: 0 4rem;
 }
@@ -97,6 +113,16 @@ h6 {
   position: relative;
 }
 
+.movie-name {
+  margin: 0;
+}
+
+.movie-release-date {
+  font-weight: lighter;
+  font-size: 0.75rem;
+  margin-top: 0.25rem;
+}
+
 .movie-wrapper {
   height: 170px;
   width: 120px;
@@ -111,11 +137,12 @@ h6 {
   cursor: pointer;
 }
 
+.selected-movie-info {
+  flex-direction: column;
+  flex: 1 1 50%;
+}
+
 .title {
   text-align: left;
   margin: 0;
-}
-
-.title-wrapper {
-  margin: 0 4rem;
 }

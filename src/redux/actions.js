@@ -12,9 +12,28 @@ export const getAllMovies = () => dispatch => {
       })
 }
 
+export const searchForMovie = (movie) => dispatch => {
+  MoviesService.getSelectedMovie(movie)
+    .then(movies => {
+      dispatch({
+        type: 'SEARCH_FOR_MOVIE',
+        payload: {
+          searchedMovies: movies,
+        }
+      })
+    })
+}
+
+export const getFilteredMovies = (getFilteredMovies) => dispatch => {
+  dispatch({
+    type: 'GET_FILTERED_MOVIES',
+    payload: {
+      filteredMovies: getFilteredMovies
+    }
+  });
+}
+
 export const getSelectedMovie = (getSelectedMovie) => dispatch => {
-  // console.log('GET_SELECTED_MOVIE was hit');
-  // console.log('getSelectedMovie: ', getSelectedMovie);
   dispatch({
     type: 'GET_SELECTED_MOVIE',
     payload: {
