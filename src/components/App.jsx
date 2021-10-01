@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { Link, withRouter, useHistory } from 'react-router-dom';
 import { getAllMovies, getFilteredMovies, searchForMovie } from '../redux/actions';
 import MoviesService from '../services/movies'
-import './app.scss';
+import './app.css';
 
 function App(props) {
   const [homePath, setHomePath] = useState(false);
